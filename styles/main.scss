@@ -25,19 +25,20 @@ body {
     padding: 0.2em 1em;
     margin: 0;
     font-weight: bold;
-    font-size: 3rem;
+    color: white;
+    margin: 0;
+    padding: 40px;
+
+    font-size: 1.5rem;
+    @media (min-width: $design-breakpoint) {
+      font-size: 3rem;
+    }
   }
   
   &__header {
     background: $color-primary;
     height: 20vh;
     clip-path: polygon(100% 0, 0 0, 0 100%);
-
-    h1 {
-      color: white;
-      margin: 0;
-      padding: 40px;
-    }
   }
 
   &__footer {
@@ -52,8 +53,11 @@ body {
       position: absolute;
       bottom: 0;
       right: 0;
-      font-size: 2.5rem;
       padding: 40px;
+      font-size: 2rem;
+      @media (min-width: $design-breakpoint) {
+        font-size: 2.5rem;
+      }
     }
   }
 }
@@ -67,6 +71,13 @@ body {
 
   @media (min-width: $design-breakpoint) {
     background-size: 50%;
+  }
+
+  h1 {
+    font-size: 3rem;
+    @media (min-width: $design-breakpoint) {
+      font-size: 3.5rem;
+    }
   }
 
   .intro__container {
@@ -130,14 +141,18 @@ body {
 
 .skills-main,
 .timeline-main {
+  display: flex;
+  flex-direction: column;
   @media (min-width: $design-breakpoint) {
-    display: flex;
+    flex-direction: row;
     justify-content: space-around;
     flex-wrap: wrap;
   }
 
   section {
-    width: 25%;
+    @media (min-width: $design-breakpoint) {
+      width: 25%;
+    }
     margin: 20px;
     h2 {
       text-align: center;
