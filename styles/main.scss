@@ -27,10 +27,10 @@ body {
     font-weight: bold;
     font-size: 3rem;
   }
-
-  header {
+  
+  &__header {
     background: $color-primary;
-    height: 20%;
+    height: 20vh;
     clip-path: polygon(100% 0, 0 0, 0 100%);
 
     h1 {
@@ -42,7 +42,7 @@ body {
 
   &__footer {
     background: $color-primary;
-    height: 20%;
+    height: 20vh;
     clip-path: polygon(100% 100%, 100% 0, 0 100%);
     color: white;
     position: relative;
@@ -118,6 +118,7 @@ body {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    flex-wrap: wrap;
   }
 
   footer {

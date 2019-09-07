@@ -32,14 +32,14 @@ body {
   font-size: 3rem;
 }
 
-.main-section header {
+.main-section__header {
   background: #1f33e2;
-  height: 20%;
+  height: 20vh;
   -webkit-clip-path: polygon(100% 0, 0 0, 0 100%);
           clip-path: polygon(100% 0, 0 0, 0 100%);
 }
 
-.main-section header h1 {
+.main-section__header h1 {
   color: white;
   margin: 0;
   padding: 40px;
@@ -47,7 +47,7 @@ body {
 
 .main-section__footer {
   background: #1f33e2;
-  height: 20%;
+  height: 20vh;
   -webkit-clip-path: polygon(100% 100%, 100% 0, 0 100%);
           clip-path: polygon(100% 100%, 100% 0, 0 100%);
   color: white;
@@ -155,6 +155,8 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 #contact footer {
