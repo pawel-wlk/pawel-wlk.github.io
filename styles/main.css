@@ -26,12 +26,11 @@ body {
 }
 
 .section h1 {
-  padding: 0.2em 1em;
+  padding: 0.5em 1em;
   margin: 0;
   font-weight: bold;
   color: white;
   margin: 0;
-  padding: 40px;
   font-size: 1.5rem;
 }
 
@@ -64,7 +63,7 @@ body {
   position: absolute;
   bottom: 0;
   right: 0;
-  padding: 40px;
+  padding: 0.5em 1em;
   font-size: 2rem;
 }
 
@@ -131,7 +130,8 @@ body {
 }
 
 .section--intro__container h1,
-.section--intro__container p {
+.section--intro__container p,
+.section--intro__container nav {
   padding-left: 20px;
   margin-right: 20vw;
 }
@@ -146,9 +146,9 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .section--intro__container nav ul a {

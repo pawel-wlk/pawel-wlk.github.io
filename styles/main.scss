@@ -27,12 +27,11 @@ body {
   width: 100%;
 
   h1 {
-    padding: 0.2em 1em;
+    padding: 0.5em 1em;
     margin: 0;
     font-weight: bold;
     color: white;
     margin: 0;
-    padding: 40px;
 
     font-size: 1.5rem;
     @media (min-width: $design-breakpoint) {
@@ -58,7 +57,7 @@ body {
       position: absolute;
       bottom: 0;
       right: 0;
-      padding: 40px;
+      padding: 0.5em 1em;
       font-size: 2rem;
       @media (min-width: $design-breakpoint) {
         font-size: 2.5rem;
@@ -104,11 +103,12 @@ body {
     }
 
     h1,
-    p {
+    p,
+    nav {
       padding-left: 20px;
       margin-right: 20vw;
     }
-
+    
     nav {
       font-size: 1.2rem;
       ul {
@@ -116,7 +116,7 @@ body {
         padding: 0;
 
         display: flex;
-        justify-content: space-evenly;
+        justify-content: space-between;
 
         a {
           color: $color-link;
