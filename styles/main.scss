@@ -2,6 +2,11 @@
 
 $color-primary: rgb(31, 51, 226);
 $color-link: rgb(132, 185, 255);
+$bg-gradient: linear-gradient(
+  to right,
+  lighten($color-primary, 5%),
+  darken($color-primary, 10%)
+);
 $design-breakpoint: 860px;
 
 html {
@@ -15,7 +20,7 @@ body {
   flex-direction: column;
 }
 
-.main-section {
+.section {
   @media (min-width: $design-breakpoint) {
     height: 100vh;
   }
@@ -34,15 +39,15 @@ body {
       font-size: 3rem;
     }
   }
-  
+
   &__header {
-    background: $color-primary;
+    background: $bg-gradient;
     height: 20vh;
     clip-path: polygon(100% 0, 0 0, 0 100%);
   }
 
   &__footer {
-    background: $color-primary;
+    background: $bg-gradient;
     height: 20vh;
     clip-path: polygon(100% 100%, 100% 0, 0 100%);
     color: white;
@@ -62,7 +67,7 @@ body {
   }
 }
 
-.intro {
+.section--intro {
   color: white;
   background: url("/img/me.jpg");
   background-size: cover;
@@ -83,22 +88,23 @@ body {
   &__container {
     height: 100vh;
     width: 100%;
-    background: $color-primary;
-
+    background: $bg-gradient;
     display: flex;
     flex-direction: column;
-    justify-content: end;
-
+    justify-content: flex-end;
     clip-path: polygon(5% 0%, 100% 80%, 100% 100%, 0 100%, 0 0);
+
     @media (min-width: $design-breakpoint) {
       clip-path: polygon(50% 0%, 100% 80%, 100% 100%, 0 100%, 0 0);
       justify-content: space-evenly;
+
       p {
         font-size: 1.2rem;
       }
     }
 
-    h1, p {
+    h1,
+    p {
       padding-left: 20px;
       margin-right: 20vw;
     }
@@ -115,15 +121,13 @@ body {
         a {
           color: $color-link;
         }
-
       }
     }
   }
-
 }
 
-.timeline,
-.skills {
+.section--timeline,
+.section--skills {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -149,17 +153,21 @@ body {
   }
 }
 
-.contact {
-  background: $color-primary;
+.section--contact {
+  background: $bg-gradient;
   display: flex;
   flex-direction: column;
 
-  .contact-links {
+  &__links {
     flex-grow: 1;
     display: flex;
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
+
+    a {
+      width: 15%;
+    }
   }
 
   footer {
@@ -167,8 +175,4 @@ body {
     text-align: center;
     padding: 30px;
   }
-}
-
-.link {
-  width: 15%;
 }
