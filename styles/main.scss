@@ -164,6 +164,9 @@ ul {
     h2 {
       font-size: 1.1rem;
     }
+    section {
+      margin-top: 30px;
+    }
     @media (min-width: $design-breakpoint) {
       display: flex;
       flex-direction: row;

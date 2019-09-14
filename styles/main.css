@@ -217,6 +217,11 @@ ul {
   font-size: 1.1rem;
 }
 
+.section--timeline__main section,
+.section--skills__main section {
+  margin-top: 30px;
+}
+
 @media (min-width: 860px) {
   .section--timeline__main,
   .section--skills__main {
