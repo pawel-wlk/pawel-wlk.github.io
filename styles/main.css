@@ -1,4 +1,11 @@
 @import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
+*,
+*::after,
+*::before {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -15,7 +22,32 @@ body {
           flex-direction: column;
 }
 
+h1,
+h2,
+p,
+nav {
+  padding: 0;
+  margin: 0;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+ul {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
 .section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   width: 100%;
 }
 
@@ -25,27 +57,30 @@ body {
   }
 }
 
-.section h1 {
-  padding: 0.5em 1em;
-  margin: 0;
-  font-weight: bold;
-  color: white;
-  margin: 0;
-  font-size: 1.5rem;
-}
-
-@media (min-width: 860px) {
-  .section h1 {
-    font-size: 3rem;
-  }
-}
-
 .section__header {
   background: -webkit-gradient(linear, left top, right top, from(#3648e5), to(#1828b6));
   background: linear-gradient(to right, #3648e5, #1828b6);
   height: 20vh;
   -webkit-clip-path: polygon(100% 0, 0 0, 0 100%);
           clip-path: polygon(100% 0, 0 0, 0 100%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.section__header h1 {
+  font-weight: bold;
+  color: white;
+  font-size: 1.5rem;
+}
+
+@media (min-width: 860px) {
+  .section__header h1 {
+    font-size: 3rem;
+  }
 }
 
 .section__footer {
@@ -56,14 +91,20 @@ body {
           clip-path: polygon(100% 100%, 100% 0, 0 100%);
   color: white;
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding-right: 20px;
 }
 
 .section__footer .next-section {
   color: #84b9ff;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  padding: 0.5em 1em;
   font-size: 2rem;
 }
 
@@ -132,7 +173,6 @@ body {
 .section--intro__container h1,
 .section--intro__container p,
 .section--intro__container nav {
-  padding-left: 20px;
   margin-right: 20vw;
 }
 
@@ -155,8 +195,7 @@ body {
   color: #84b9ff;
 }
 
-.section--timeline,
-.section--skills {
+.section--timeline {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -164,25 +203,26 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
 }
 
-.section--timeline__main,
 .section--skills__main {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+}
+
+.section--timeline__main h2,
+.section--skills__main h2 {
+  font-size: 1.1rem;
 }
 
 @media (min-width: 860px) {
   .section--timeline__main,
   .section--skills__main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -192,23 +232,14 @@ body {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
   }
-}
-
-.section--timeline__main section,
-.section--skills__main section {
-  margin: 20px;
-}
-
-@media (min-width: 860px) {
   .section--timeline__main section,
   .section--skills__main section {
     width: 25%;
   }
-}
-
-.section--timeline__main section h2,
-.section--skills__main section h2 {
-  text-align: center;
+  .section--timeline__main h2,
+  .section--skills__main h2 {
+    font-size: 1.25rem;
+  }
 }
 
 .section--contact {

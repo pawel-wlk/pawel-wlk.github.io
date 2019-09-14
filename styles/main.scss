@@ -9,6 +9,12 @@ $bg-gradient: linear-gradient(
 );
 $design-breakpoint: 860px;
 
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -20,29 +26,44 @@ body {
   flex-direction: column;
 }
 
+h1,
+h2,
+p,
+nav {
+  padding: 0;
+  margin: 0;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+ul {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
 .section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   @media (min-width: $design-breakpoint) {
     height: 100vh;
   }
   width: 100%;
 
-  h1 {
-    padding: 0.5em 1em;
-    margin: 0;
-    font-weight: bold;
-    color: white;
-    margin: 0;
-
-    font-size: 1.5rem;
-    @media (min-width: $design-breakpoint) {
-      font-size: 3rem;
-    }
-  }
-
   &__header {
     background: $bg-gradient;
     height: 20vh;
     clip-path: polygon(100% 0, 0 0, 0 100%);
+    display: flex;
+    align-items: center;
+    h1 {
+      font-weight: bold;
+      color: white;
+      font-size: 1.5rem;
+      @media (min-width: $design-breakpoint) {
+        font-size: 3rem;
+      }
+    }
   }
 
   &__footer {
@@ -51,13 +72,13 @@ body {
     clip-path: polygon(100% 100%, 100% 0, 0 100%);
     color: white;
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 20px;
 
     .next-section {
       color: $color-link;
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      padding: 0.5em 1em;
       font-size: 2rem;
       @media (min-width: $design-breakpoint) {
         font-size: 2.5rem;
@@ -105,10 +126,9 @@ body {
     h1,
     p,
     nav {
-      padding-left: 20px;
       margin-right: 20vw;
     }
-    
+
     nav {
       font-size: 1.2rem;
       ul {
@@ -126,28 +146,34 @@ body {
   }
 }
 
-.section--timeline,
-.section--skills {
+.section--timeline {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+}
 
+.section--skills {
   &__main {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.section--timeline,
+.section--skills {
+  &__main {
+    h2 {
+      font-size: 1.1rem;
+    }
     @media (min-width: $design-breakpoint) {
+      display: flex;
       flex-direction: row;
       justify-content: space-around;
       flex-wrap: wrap;
-    }
-
-    section {
-      @media (min-width: $design-breakpoint) {
+      section {
         width: 25%;
       }
-      margin: 20px;
       h2 {
-        text-align: center;
+        font-size: 1.25rem;
       }
     }
   }
