@@ -37,6 +37,10 @@ ul {
   padding-right: 20px;
 }
 
+a:not(:hover) {
+  text-decoration: none;
+}
+
 .section {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -257,6 +261,7 @@ ul {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  height: 40vh;
 }
 
 .section--contact__links {
@@ -277,6 +282,7 @@ ul {
 
 .section--contact__links a {
   width: 15%;
+  max-width: 100px;
 }
 
 .section--contact footer {

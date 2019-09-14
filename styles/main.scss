@@ -41,6 +41,10 @@ ul {
   padding-right: 20px;
 }
 
+a:not(:hover) {
+  text-decoration: none;
+}
+
 .section {
   display: flex;
   flex-direction: column;
@@ -187,6 +191,8 @@ ul {
   display: flex;
   flex-direction: column;
 
+  height: 40vh;
+
   &__links {
     flex-grow: 1;
     display: flex;
@@ -196,6 +202,7 @@ ul {
 
     a {
       width: 15%;
+      max-width: 100px;
     }
   }
 
